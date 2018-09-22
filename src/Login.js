@@ -17,7 +17,16 @@ class Login extends Component {
     handleSubmit(evt) {
         evt.preventDefault();
 
-
+        fetch('http://localhost:3000/auth_user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: {
+                email: this.state.username,
+                password: this.state.password
+            },
+        }).then((response) => {return response.json()})
     }
 
     handleUserChange(evt) {
