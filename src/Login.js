@@ -26,7 +26,8 @@ class Login extends Component {
                 email: this.state.username,
                 password: this.state.password
             },
-        }).then((response) => {return response.json()})
+        }).then((response) => {return response.json()}).
+            then((result) => {console.log(result)})
     }
 
     handleUserChange(evt) {
